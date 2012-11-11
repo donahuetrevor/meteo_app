@@ -27,6 +27,7 @@ import com.google.android.maps.Overlay;
 import com.google.android.maps.Projection;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.internal.StringMap;
 import com.gson.Events;
 import com.gson.MyLocation;
 import com.meteo.R;
@@ -94,20 +95,23 @@ public class TestOverlay extends Overlay {
 		Gson gson = new GsonBuilder().create();
 		MyLocation loc = gson.fromJson(content, MyLocation.class);
 		
-		List<Events> events = loc.getEvents();
+		List<StringMap> events = loc.getEvents();
 		
-//		GeoPoint[] resultArray = new GeoPoint[2];
+		GeoPoint[] resultArray = new GeoPoint[2];
 		
 		String testString = "debug start";
-		
-		for (Events e : events) {
-			testString += "huiak";
+		int i = 0;
+		for (StringMap e : events) {
+                    Double lat = (Double) e.get("LaT");
+                    Double lng = (Double) e.get("LNG");
+                    
+                    resultArray[i] = new GeoPoint((int) (lat.doubleValue() * 1E6), (int) (lng.doubleValue() * 1E6));
+                    
 		}
 		
 		
 		Toast.makeText(this.cont, testString, Toast.LENGTH_SHORT).show();
-//		
-		GeoPoint[] resultArray = new GeoPoint[2];
+
 		resultArray[0] = new GeoPoint((int)(45.45622 * 1E6), (int)(-75.7231 * 1E6));
 		resultArray[1] = new GeoPoint((int)(56.27058 * 1E6), (int)(-2.69840 * 1E6));
 //		

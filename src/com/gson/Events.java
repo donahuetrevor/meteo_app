@@ -4,8 +4,8 @@ package com.gson;
 import java.util.List;
 
 public class Events{
-   	private String city;
-   	private String country;
+   	private String City;
+   	private String Country;
    	private String crDate;
    	private Number deleted;
    	private String emDate;
@@ -27,16 +27,16 @@ public class Events{
    	private Number yearly;
 
  	public String getCity(){
-		return this.city;
+		return this.City;
 	}
 	public void setCity(String city){
-		this.city = city;
+		this.City = city;
 	}
  	public String getCountry(){
-		return this.country;
+		return this.Country;
 	}
 	public void setCountry(String country){
-		this.country = country;
+		this.Country = country;
 	}
  	public String getCrDate(){
 		return this.crDate;
