@@ -11,7 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.maps.MapView;
-import android.R;
+import com.meteo.R;
+
 import com.meteo.apiclient.Client;
 
 public class MainActivity extends FragmentActivity
@@ -32,7 +33,7 @@ public class MainActivity extends FragmentActivity
         
         loginButton.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View view) {
+        public void onClick(View view) {
                 Client apiClient = new Client();
                 if (apiClient.login(usernameText.getText().toString(), passwordText.getText().toString())) {
                     Intent intent = new Intent(view.getContext(), MapActivity.class);

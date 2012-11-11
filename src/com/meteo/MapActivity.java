@@ -3,9 +3,11 @@ package com.meteo;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -17,6 +19,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapController;
@@ -27,8 +30,9 @@ import com.google.android.maps.OverlayItem;
 import com.google.android.maps.Projection;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.gson.Events;
 import com.gson.MyLocation;
-import com.taxi.R;
+import com.meteo.R;
 
 public class MapActivity extends FragmentActivity {
 
@@ -91,19 +95,31 @@ public class MapActivity extends FragmentActivity {
 //        itemizedoverlay.addOverlay(overlayitem2);
 //        mapOverlays.add(itemizedoverlay);
         
-        this.demoOverlay = new TestOverlay();
+        this.demoOverlay = new TestOverlay(mapView.getContext());
         mapView.getOverlays().add(demoOverlay);
-     
 
-        String content = Common.readTextFile(getResources().openRawResource(R.raw.events_sample), mapView.getContext());
-  	  	
-        Gson gson = new GsonBuilder().create();
-        MyLocation loc = gson.fromJson(content, MyLocation.class);
+//        String content = Common.readTextFile(getResources().openRawResource(R.raw.events_sample), mapView.getContext());
+//  	  	
+//        Gson gson = new GsonBuilder().create();
+//        MyLocation loc = gson.fromJson(content, MyLocation.class);
+//        
+//        String test = new String();
+//        
+//        List events = loc.getEvents();
+//        
+//        Iterator<Events> iterator = events.iterator();
+//    	while (iterator.hasNext()) {
+//    		Events e = iterator.next();
+////    		e.getLaT();
+////    		e.getLNG();
+//    	}
+//        
+//        DialogFragment newFragment = new TestDialog("test");
+//    	newFragment.show(getSupportFragmentManager(), "missiles");
         
-        
-        
-        DialogFragment newFragment = new TestDialog(loc.toString());
-    	newFragment.show(getSupportFragmentManager(), "missiles");
+//		String content = Common.readTextFile(getResources().openRawResource(R.raw.events_sample), mapView.getContext());
+		
+//		Toast.makeText(mapView.getContext(), content, Toast.LENGTH_LONG).show();
         
     }
 
@@ -146,6 +162,11 @@ public class MapActivity extends FragmentActivity {
             	// show THE dialog
             	DialogFragment newFragment = new TestDialog("Test map");
             	newFragment.show(getSupportFragmentManager(), "missiles");
+                return true;
+            case R.id.options:
+                Intent intent = new Intent(getApplicationContext(), OptionsActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivityForResult(intent, 0);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

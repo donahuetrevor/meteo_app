@@ -80,14 +80,14 @@ public class Events{
 	public void setID(Number iD){
 		this.iD = iD;
 	}
- 	public Number getLNG(){
-		return this.lNG;
+ 	public int getLNG(){
+		return this.lNG.intValue();
 	}
 	public void setLNG(Number lNG){
 		this.lNG = lNG;
 	}
- 	public Number getLaT(){
-		return this.laT;
+ 	public int getLaT(){
+		return this.laT.intValue();
 	}
 	public void setLaT(Number laT){
 		this.laT = laT;

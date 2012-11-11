@@ -19,8 +19,4 @@ public class MyLocation{
 	public void setSuccess(boolean success){
 		this.success = success;
 	}
-	
-	public String toString() {
-		return "My location - success: " + (this.success ? "TRUE" : "FALSE");
-	}
 }

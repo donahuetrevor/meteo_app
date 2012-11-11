@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD
-    <string name="app_name">WeatherPlan</string>
-=======
     <string name="app_name">Meteo</string>
->>>>>>> e993941ae9e4917b9c4ac635684d1c67394314f6
     <string name="login_button">Login</string>
     <string name="hello_world">Hello World!</string>
     <string name="new_game">New Game</string>
