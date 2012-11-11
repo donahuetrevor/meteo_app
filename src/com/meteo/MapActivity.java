@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -28,7 +29,7 @@ import com.google.android.maps.Projection;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.gson.MyLocation;
-import com.taxi.R;
+import com.meteo.R;
 
 public class MapActivity extends FragmentActivity {
 
@@ -146,6 +147,11 @@ public class MapActivity extends FragmentActivity {
             	// show THE dialog
             	DialogFragment newFragment = new TestDialog("Test map");
             	newFragment.show(getSupportFragmentManager(), "missiles");
+                return true;
+            case R.id.options:
+                Intent intent = new Intent(getApplicationContext(), OptionsActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivityForResult(intent, 0);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
