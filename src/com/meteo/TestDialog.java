@@ -1,4 +1,4 @@
-package com.taxi;
+package com.meteo;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

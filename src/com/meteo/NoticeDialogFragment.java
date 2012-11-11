@@ -1,4 +1,4 @@
-package com.taxi;
+package com.meteo;
 
 import android.app.Activity;
 import android.support.v4.app.DialogFragment;

@@ -1,4 +1,4 @@
-package com.taxi;
+package com.meteo;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.maps.MapView;
-import com.taxi.apiclient.Client;
+import com.taxi.R;
+import com.meteo.apiclient.Client;
 
 public class MainActivity extends FragmentActivity
 						  implements NoticeDialogFragment.NoticeDialogListener

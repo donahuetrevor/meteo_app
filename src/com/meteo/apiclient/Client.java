@@ -1,4 +1,4 @@
-package com.taxi.apiclient;
+package com.meteo.apiclient;
 
 public class Client {
 

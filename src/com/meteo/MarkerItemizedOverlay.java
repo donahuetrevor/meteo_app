@@ -1,4 +1,4 @@
-package com.taxi;
+package com.meteo;
 
 import java.util.ArrayList;
 

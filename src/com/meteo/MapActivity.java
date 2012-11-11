@@ -1,4 +1,4 @@
-package com.taxi;
+package com.meteo;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -28,6 +28,7 @@ import com.google.android.maps.Projection;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.gson.MyLocation;
+import com.taxi.R;
 
 public class MapActivity extends FragmentActivity {
 

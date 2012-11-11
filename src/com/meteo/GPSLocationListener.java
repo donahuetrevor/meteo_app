@@ -1,4 +1,4 @@
-package com.taxi;
+package com.meteo;
 
 import android.location.Location;
 import android.location.LocationListener;
